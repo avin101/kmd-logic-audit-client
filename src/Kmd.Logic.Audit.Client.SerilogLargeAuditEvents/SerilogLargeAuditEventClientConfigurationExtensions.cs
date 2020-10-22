@@ -8,7 +8,7 @@ namespace Kmd.Logic.Audit.Client.SerilogLargeAuditEvents
 {
     public static class SerilogLargeAuditEventClientConfigurationExtensions
     {
-        public static LoggerConfiguration CreateBlobConfiguration(this SerilogLargeAuditEventClientConfiguration config)
+        public static LoggerConfiguration CreateAzureBlobOrEventHubConfiguration(this SerilogLargeAuditEventClientConfiguration config)
         {
             if (config == null)
             {

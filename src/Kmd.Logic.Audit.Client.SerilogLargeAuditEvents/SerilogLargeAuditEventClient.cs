@@ -11,7 +11,7 @@ namespace Kmd.Logic.Audit.Client.SerilogLargeAuditEvents
 
         public SerilogLargeAuditEventClient(SerilogLargeAuditEventClientConfiguration config)
         {
-            this.customSinkLogger = config.CreateBlobConfiguration().CreateLogger();
+            this.customSinkLogger = config.CreateAzureBlobOrEventHubConfiguration().CreateLogger();
             this.disposeLogger = true;
             this.auditToCustomSink = new SerilogCustomSinkLoggerAudit(this.customSinkLogger);
         }
