@@ -12,7 +12,7 @@ namespace AuditClient
 
         public string ConnectionString { get; set; }
 
-        public string AuditEventTopic { get; set; } = "auditcustomsink";
+        public string AuditEventTopic { get; set; } = "audit";
 
         public string EventSource { get; set; }
 
@@ -22,6 +22,6 @@ namespace AuditClient
 
         public string BlobContainerName { get; set; } = "large-audit-events1";
 
-        public int EventSize { get; set; }
+        public int EventSizeLimitInBytes { get; set; }
     }
 }

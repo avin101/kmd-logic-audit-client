@@ -35,7 +35,7 @@ namespace AuditClient
                 StorageAccountName = config.Ingestion.BlobAccountName,
                 StorageConnectionString = config.Ingestion.BlobConnectionString,
                 StorageContainerName = config.Ingestion.BlobContainerName,
-                EventSizeLimitinBytes = 10
+                EventSizeLimitinBytes = config.Ingestion.EventSizeLimitInBytes
             };
 
             using (var client = new Kmd.Logic.Audit.Client.SerilogLargeAuditEvents.SerilogLargeAuditEventClient(clientConfig))
