@@ -1,8 +1,8 @@
-﻿using Kmd.Logic.Audit.Client;
-using Microsoft.Extensions.Configuration;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Kmd.Logic.Audit.Client;
+using Microsoft.Extensions.Configuration;
 
 namespace AuditClient
 {
@@ -30,12 +30,12 @@ namespace AuditClient
             {
                 EventSource = config.Ingestion.EventSource ?? $"{typeof(Program).Assembly.GetName().Name} on {Environment.MachineName}",
                 AuditEventTopic = config.Ingestion.AuditEventTopic,
-                EventhubConnectionString = config.Ingestion.ConnectionString,
+                EventHubConnectionString = config.Ingestion.ConnectionString,
                 EnrichFromLogContext = config.Client.EnrichFromLogContext,
                 StorageAccountName = config.Ingestion.BlobAccountName,
                 StorageConnectionString = config.Ingestion.BlobConnectionString,
                 StorageContainerName = config.Ingestion.BlobContainerName,
-                EventSizeLimitinBytes = 10
+                EventSizeLimitinBytes = config.Ingestion.EventSizeLimitinBytes
             };
 
             using (var client = new Kmd.Logic.Audit.Client.SerilogLargeAuditEvents.SerilogLargeAuditEventClient(clientConfig))
@@ -48,7 +48,7 @@ namespace AuditClient
                     "Sending {0} ({3} threads) audit events to {1} at {2}",
                     config.Ingestion.NumberOfEventsToSend,
                     clientConfig.AuditEventTopic,
-                    clientConfig.EventhubConnectionString,
+                    clientConfig.EventHubConnectionString,
                     config.Ingestion.NumberOfThreads);
 
                 var sw = System.Diagnostics.Stopwatch.StartNew();

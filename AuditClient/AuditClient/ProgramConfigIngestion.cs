@@ -22,6 +22,6 @@ namespace AuditClient
 
         public string BlobContainerName { get; set; } = "large-audit-events1";
 
-        public int EventSize { get; set; }
+        public int EventSizeLimitinBytes { get; set; }
     }
 }
