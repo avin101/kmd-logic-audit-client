@@ -12,7 +12,7 @@ namespace AuditClient
 
         public string ConnectionString { get; set; }
 
-        public string AuditEventTopic { get; set; } = "auditcustomsink";
+        public string AuditEventTopic { get; set; } = "audit";
 
         public string EventSource { get; set; }
 
