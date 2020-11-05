@@ -16,11 +16,11 @@ namespace AuditClient
 
         public string EventSource { get; set; }
 
-        public string BlobConnectionString { get; set; } = "DefaultEndpointsProtocol=https;AccountName=kmdaisuyw;AccountKey=GqeuOfyImMYP4zUdgiXQi1h62Mvaq4NnqilRG1aFw+YEqPN2lw0YQQMX0rGmLOztnuc8NOGk8in89ZFQ0DBH1g==;EndpointSuffix=core.windows.net";
+        public string BlobConnectionString { get; set; }
 
-        public string BlobAccountName { get; set; } = "kmdaisuyw";
+        public string BlobAccountName { get; set; }
 
-        public string BlobContainerName { get; set; } = "large-audit-events1";
+        public string BlobContainerName { get; set; }
 
         public int EventSizeLimitinBytes { get; set; }
     }
