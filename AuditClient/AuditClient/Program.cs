@@ -68,7 +68,7 @@ namespace AuditClient
                         .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
                         .Select(i =>
                         {
-                            audit.Write("Hello number {IterationNum} from {Application} v{Version}", i, name, version);
+                            audit.Write("Pre release testing with number {IterationNum} from {Application} v{Version}", i, name, version);
 
                             var numDividedBy10Or1 = config.Ingestion.NumberOfEventsToSend < 10
                                 ? 1
