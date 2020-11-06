@@ -48,7 +48,7 @@ namespace AuditClient
                     "Sending {0} ({3} threads) audit events to {1} at {2}",
                     config.Ingestion.NumberOfEventsToSend,
                     clientConfig.AuditEventTopic,
-                    clientConfig.EventHubConnectionString,
+                     clientConfig.EventHubConnectionString,
                     config.Ingestion.NumberOfThreads);
 
                 var sw = System.Diagnostics.Stopwatch.StartNew();
