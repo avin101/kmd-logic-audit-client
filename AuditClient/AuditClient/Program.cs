@@ -34,9 +34,15 @@ namespace AuditClient
                 EnrichFromLogContext = config.Client.EnrichFromLogContext,
                 StorageAccountName = config.Ingestion.BlobAccountName,
                 StorageConnectionString = config.Ingestion.BlobConnectionString,
-                StorageContainerName = config.Ingestion.BlobContainerName,
-                EventSizeLimitinBytes = config.Ingestion.EventSizeLimitinBytes
+                StorageContainerName = config.Ingestion.BlobContainerName
             };
+
+            List<Employee> employees = new List<Employee>();
+            for (int i = 0; i < 10000000; i++)
+            {
+                var emp = new Employee();
+                employees.Add(emp);
+            }
 
             using (var client = new Kmd.Logic.Audit.Client.SerilogLargeAuditEvents.SerilogLargeAuditEventClient(clientConfig))
             {
@@ -68,7 +74,7 @@ namespace AuditClient
                         .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
                         .Select(i =>
                         {
-                            audit.Write("Pre release testing with number {IterationNum} from {Application} v{Version}", i, name, version);
+                            audit.Write("Pre release testing with number {IterationNum} from {Application} v{Version} data {Data}", i, name, version, employees);
 
                             var numDividedBy10Or1 = config.Ingestion.NumberOfEventsToSend < 10
                                 ? 1

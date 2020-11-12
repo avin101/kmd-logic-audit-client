@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AuditClient
 {
-    class ProgramConfigIngestion
+    public class ProgramConfigIngestion
     {
         public int NumberOfEventsToSend { get; set; } = 1;
 
