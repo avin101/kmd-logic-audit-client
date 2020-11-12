@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AuditClient
 {
-    class ProgramConfig
+    public class ProgramConfig
     {
         public ProgramConfigIngestion Ingestion { get; set; } = new ProgramConfigIngestion();
 

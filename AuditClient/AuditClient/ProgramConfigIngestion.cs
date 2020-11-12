@@ -8,7 +8,7 @@ namespace AuditClient
     {
         public int NumberOfEventsToSend { get; set; } = 1;
 
-        public int NumberOfThreads { get; set; } = 1;
+        public int NumberOfThreads { get; set; } = 5;
 
         public string ConnectionString { get; set; }
 

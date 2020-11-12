@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AuditClient
 {
-    class ProgramConfigClient
+    public class ProgramConfigClient
     {
         public bool EnrichFromLogContext { get; set; } = true;
     }
